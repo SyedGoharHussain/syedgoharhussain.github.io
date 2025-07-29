@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -235,9 +236,12 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) rotate(0deg);
             }
+
             50% {
                 transform: translateY(-20px) rotate(5deg);
             }
@@ -329,6 +333,136 @@
 
         .social-icons a:hover::before {
             left: 0;
+        }
+
+        /* Achievements Section */
+        #achievements {
+            position: relative;
+        }
+
+        #achievements::before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(110, 87, 224, 0.1) 0%, rgba(110, 87, 224, 0) 70%);
+            z-index: 0;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .achievement-card {
+            background-color: var(--gray-color);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .achievement-card:hover::before {
+            width: 8px;
+        }
+
+        .achievement-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover .achievement-title {
+            color: var(--secondary-color);
+        }
+
+        .achievement-date {
+            display: inline-block;
+            background-color: rgba(110, 87, 224, 0.2);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover .achievement-date {
+            background-color: rgba(255, 77, 158, 0.2);
+            color: var(--secondary-color);
+        }
+
+        .achievement-description {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover .achievement-description {
+            opacity: 1;
+        }
+
+        .certificate-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .certificate-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .certificate-modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--secondary-color);
+            transform: rotate(90deg);
         }
 
         /* About Section */
@@ -972,15 +1106,17 @@
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            .about-container, .contact-container {
+
+            .about-container,
+            .contact-container {
                 flex-direction: column;
             }
-            
+
             .timeline::before {
                 left: 30px;
             }
-            
-            .timeline-item:nth-child(odd), 
+
+            .timeline-item:nth-child(odd),
             .timeline-item:nth-child(even) {
                 padding-left: 80px;
                 padding-right: 0;
@@ -997,7 +1133,7 @@
             .menu-btn {
                 display: block;
             }
-            
+
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -1010,19 +1146,19 @@
                 padding-top: 50px;
                 transition: all 0.5s ease;
             }
-            
+
             .nav-links.active {
                 left: 0;
             }
-            
+
             .nav-links li {
                 margin: 15px 0;
             }
-            
+
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-            
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -1032,7 +1168,7 @@
             .section-title {
                 font-size: 2rem;
             }
-            
+
             .hero-content h1 {
                 font-size: 2rem;
             }
@@ -1043,6 +1179,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header id="header">
@@ -1056,6 +1193,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1068,10 +1206,12 @@
             <div class="hero-content">
                 <h1>Hi, I'm <span>Syed Gohar Hussain</span></h1>
                 <p class="typed">BSIT Student | Full Stack Developer | WordPress Developer</p>
-                <p>I'm passionate about coding, developing applications, and solving real-world problems through technology.</p>
+                <p>I'm passionate about coding, developing applications, and solving real-world problems through
+                    technology.</p>
                 <a href="#projects" class="btn">View My Work</a>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/syed-gohar-hussain-95801a345/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/in/syed-gohar-hussain-95801a345/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/SyedGoharHussain" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="#hero" target="_blank"><i class="fas fa-globe"></i></a>
                 </div>
@@ -1089,10 +1229,13 @@
                 </div>
                 <div class="about-content">
                     <h3>BSIT Student at Air University</h3>
-                    <p>I'm a 4th-semester BSIT student at Air University with a CGPA of 3.5. I'm passionate about coding, developing applications, WordPress development, and solving real-world problems through technology.</p>
-                    <p>I was the Highest Achiever of Batch S-24 (2nd Semester) and 2nd Highest Achiever of Batch F-24 (3rd Semester).</p>
+                    <p>I'm a 4th-semester BSIT student at Air University with a CGPA of 3.5. I'm passionate about
+                        coding, developing applications, WordPress development, and solving real-world problems through
+                        technology.</p>
+                    <p>I was the Highest Achiever of Batch S-24 (2nd Semester) and 2nd Highest Achiever of Batch F-24
+                        (3rd Semester).</p>
                     <a href="resume.pdf" class="btn" download>Download Resume</a>
-                    
+
                     <div class="skills">
                         <h3>My Skills</h3>
                         <div class="skill-item">
@@ -1158,18 +1301,23 @@
                     </div>
                     <h4 class="experience-company"><a href="https://zenaticservices.com/">Zenatic Services</a></h4>
                     <p class="experience-description">
-                        Developing and maintaining web applications using modern technologies. Collaborating with cross-functional teams to deliver high-quality software solutions. Implementing responsive designs and optimizing application performance.
+                        Developing and maintaining web applications using modern technologies. Collaborating with
+                        cross-functional teams to deliver high-quality software solutions. Implementing responsive
+                        designs and optimizing application performance.
                     </p>
                 </div>
-                
+
                 <div class="experience-item">
                     <div class="experience-header">
                         <h3 class="experience-title">AI Intern</h3>
                         <span class="experience-date">Summer 2025</span>
                     </div>
-                    <h4 class="experience-company"><a href="https://spsnet.com/">Software Productivity Strategists</a></h4>
+                    <h4 class="experience-company"><a href="https://spsnet.com/">Software Productivity Strategists</a>
+                    </h4>
                     <p class="experience-description">
-                        Worked on AI and machine learning projects, including natural language processing and data analysis. Assisted in developing algorithms and models to solve business problems. Gained hands-on experience with Python and AI frameworks.
+                        Worked on AI and machine learning projects, including natural language processing and data
+                        analysis. Assisted in developing algorithms and models to solve business problems. Gained
+                        hands-on experience with Python and AI frameworks.
                     </p>
                 </div>
             </div>
@@ -1202,7 +1350,51 @@
             </div>
         </div>
     </section>
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title">My Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <h3 class="achievement-title">Highest Achiever - Batch SP-23</h3>
+                    <span class="achievement-date">2023</span>
+                    <p class="achievement-description">Awarded as the Highest Achiever of Batch SP-23 (2nd Semester) at
+                        Air University Islamabad for outstanding performance.</p>
+                    <button class="btn view-certificate"
+                        data-certificate="Cert1.jpg">View
+                        Certificate</button>
+                </div>
 
+                <div class="achievement-card">
+                    <h3 class="achievement-title">Highest Achiever - Batch F-24</h3>
+                    <span class="achievement-date">2024</span>
+                    <p class="achievement-description">Recognized as the Highest Achiever of Batch F-24 (3rd
+                        Semester) at Air University Islamabad for excellent academic results.</p>
+                    <button class="btn view-certificate"
+                        data-certificate="Cert2.jpg">View
+                        Certificate</button>
+                </div>
+
+                <div class="achievement-card">
+                    <h3 class="achievement-title">Code Air Competition</h3>
+                    <span class="achievement-date">2023</span>
+                    <p class="achievement-description">Participated in the Code Air programming competition at Air
+                        University, showcasing problem-solving and coding skills.</p>
+                    <button class="btn view-certificate"
+                        data-certificate="Cert3.png">View
+                        Certificate</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div class="certificate-modal" id="certificateModal">
+        <span class="close-modal">&times;</span>
+        <div class="certificate-modal-content">
+            <img id="modalCertificateImage" src="" alt="Certificate">
+        </div>
+    </div>
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
@@ -1214,26 +1406,29 @@
                     </div>
                     <div class="project-info">
                         <h3>Service Provider App With MySQL</h3>
-                        <p>A C++ project that connects customers with workers (e.g., electricians, plumbers) based on location.</p>
+                        <p>A C++ project that connects customers with workers (e.g., electricians, plumbers) based on
+                            location.</p>
                         <div class="project-tech">
                             <span class="tech-tag">C++</span>
                             <span class="tech-tag">MySQL</span>
                             <span class="tech-tag">File Handling</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/SyedGoharHussain/MYSQL_SERVICE_APP"><i class="fab fa-github"></i> Code</a>
-                            
+                            <a href="https://github.com/SyedGoharHussain/MYSQL_SERVICE_APP"><i
+                                    class="fab fa-github"></i> Code</a>
+
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-img">
                         <img src="task.jfif" alt="Task Management System">
                     </div>
                     <div class="project-info">
                         <h3>Task Management System on MERN</h3>
-                        <p>A responsive MERN web app for creating, updating, and deleting tasks with user authentication.</p>
+                        <p>A responsive MERN web app for creating, updating, and deleting tasks with user
+                            authentication.</p>
                         <div class="project-tech">
                             <span class="tech-tag">MongoDB</span>
                             <span class="tech-tag">Express</span>
@@ -1241,12 +1436,13 @@
                             <span class="tech-tag">Node.js</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/SyedGoharHussain/TASK_MANAGEMENT"><i class="fab fa-github"></i> Code</a>
-                            
+                            <a href="https://github.com/SyedGoharHussain/TASK_MANAGEMENT"><i class="fab fa-github"></i>
+                                Code</a>
+
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-img">
                         <img src="reverse.jfif" alt="Reverse Shell">
@@ -1260,8 +1456,9 @@
                             <span class="tech-tag">Cybersecurity</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/SyedGoharHussain/Reverse_Shell"><i class="fab fa-github"></i> Code</a>
-                            
+                            <a href="https://github.com/SyedGoharHussain/Reverse_Shell"><i class="fab fa-github"></i>
+                                Code</a>
+
                         </div>
                     </div>
                 </div>
@@ -1291,7 +1488,8 @@
                         </div>
                     </div>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/syed-gohar-hussain-95801a345/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/syed-gohar-hussain-95801a345/" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/SyedGoharHussain" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="#hero" target="_blank"><i class="fas fa-globe"></i></a>
                     </div>
@@ -1330,7 +1528,7 @@
 
     <script>
         // Header scroll effect
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.getElementById('header');
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
@@ -1343,25 +1541,25 @@
         const menuBtn = document.querySelector('.menu-btn');
         const navLinks = document.querySelector('.nav-links');
 
-        menuBtn.addEventListener('click', function() {
+        menuBtn.addEventListener('click', function () {
             navLinks.classList.toggle('active');
         });
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 navLinks.classList.remove('active');
             });
         });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
@@ -1388,7 +1586,7 @@
             threshold: 0.1
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     if (entry.target.id === 'about') {
@@ -1403,9 +1601,33 @@
             observer.observe(section);
         });
 
+        // Certificate modal functionality
+        const modal = document.getElementById('certificateModal');
+        const modalImg = document.getElementById('modalCertificateImage');
+        const closeModal = document.querySelector('.close-modal');
+        const viewButtons = document.querySelectorAll('.view-certificate');
+
+        viewButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const certificateUrl = this.getAttribute('data-certificate');
+                modal.style.display = 'flex';
+                modalImg.src = certificateUrl;
+            });
+        });
+
+        closeModal.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside the image
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
         // Simple typing effect
         const typedText = document.querySelector('.typed');
-        const texts = ["IT Specialist", "</Full Stack Developer>", "WordPress Developer", "Problem Solver", "<Coder>"];
+        const texts = ["IT Specialist", 'Flutter Developer', 'App Development',"</Full Stack Developer>", "WordPress Developer", "Problem Solver", "<Coder>"];
         let index = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -1413,7 +1635,7 @@
 
         function type() {
             const currentText = texts[index];
-            
+
             if (isDeleting) {
                 typedText.textContent = currentText.substring(0, charIndex - 1);
                 charIndex--;
@@ -1421,7 +1643,7 @@
                 typedText.textContent = currentText.substring(0, charIndex + 1);
                 charIndex++;
             }
-            
+
             if (!isDeleting && charIndex === currentText.length) {
                 isEnd = true;
                 isDeleting = true;
@@ -1438,9 +1660,9 @@
         }
 
         // Start typing effect after page loads
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             setTimeout(type, 1000);
-            
+
             // Add floating elements
             for (let i = 0; i < 5; i++) {
                 createFloatingElement();
@@ -1451,22 +1673,23 @@
         function createFloatingElement() {
             const element = document.createElement('div');
             element.classList.add('floating-element');
-            
+
             const size = Math.random() * 100 + 50;
             const posX = Math.random() * 100;
             const posY = Math.random() * 100;
             const delay = Math.random() * 5;
             const duration = Math.random() * 15 + 10;
-            
+
             element.style.width = `${size}px`;
             element.style.height = `${size}px`;
             element.style.left = `${posX}%`;
             element.style.top = `${posY}%`;
             element.style.animationDelay = `${delay}s`;
             element.style.animationDuration = `${duration}s`;
-            
+
             document.body.appendChild(element);
         }
     </script>
 </body>
+
 </html>
