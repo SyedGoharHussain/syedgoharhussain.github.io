@@ -1205,7 +1205,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Hi, I'm <span>Syed Gohar Hussain</span></h1>
-                <p class="typed">BSIT Student | Full Stack Developer | WordPress Developer</p>
+                <p class="typed">BSIT Student | Full Stack Developer | Flutter App Dev | WordPress Developer</p>
                 <p>I'm passionate about coding, developing applications, and solving real-world problems through
                     technology.</p>
                 <a href="#projects" class="btn">View My Work</a>
@@ -1242,6 +1242,15 @@
                             <div class="skill-info">
                                 <span>C++</span>
                                 <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Flutter App dev</span>
+                                <span>70%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 75%"></div>
@@ -1360,8 +1369,7 @@
                     <span class="achievement-date">2023</span>
                     <p class="achievement-description">Awarded as the Highest Achiever of Batch SP-23 (2nd Semester) at
                         Air University Islamabad for outstanding performance.</p>
-                    <button class="btn view-certificate"
-                        data-certificate="Cert1.jpg">View
+                    <button class="btn view-certificate" data-certificate="Cert1.jpg">View
                         Certificate</button>
                 </div>
 
@@ -1370,8 +1378,7 @@
                     <span class="achievement-date">2024</span>
                     <p class="achievement-description">Recognized as the Highest Achiever of Batch F-24 (3rd
                         Semester) at Air University Islamabad for excellent academic results.</p>
-                    <button class="btn view-certificate"
-                        data-certificate="Cert2.jpg">View
+                    <button class="btn view-certificate" data-certificate="Cert2.jpg">View
                         Certificate</button>
                 </div>
 
@@ -1380,8 +1387,7 @@
                     <span class="achievement-date">2023</span>
                     <p class="achievement-description">Participated in the Code Air programming competition at Air
                         University, showcasing problem-solving and coding skills.</p>
-                    <button class="btn view-certificate"
-                        data-certificate="Cert3.png">View
+                    <button class="btn view-certificate" data-certificate="Cert3.png">View
                         Certificate</button>
                 </div>
             </div>
@@ -1395,6 +1401,7 @@
             <img id="modalCertificateImage" src="" alt="Certificate">
         </div>
     </div>
+
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
@@ -1627,7 +1634,7 @@
         });
         // Simple typing effect
         const typedText = document.querySelector('.typed');
-        const texts = ["IT Specialist", 'Flutter Developer', 'App Development',"</Full Stack Developer>", "WordPress Developer", "Problem Solver", "<Coder>"];
+        const texts = ["IT Specialist", 'Flutter Developer', 'App Development', "</Full Stack Developer>", "WordPress Developer", "Problem Solver", "<Coder>"];
         let index = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -1669,6 +1676,17 @@
             }
         });
 
+        (function (d, m) {
+            var kommunicateSettings =
+                { "appId": "50ecaf279507b6b1845f86e11e24dcf", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+        /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+
+
         // Create floating elements
         function createFloatingElement() {
             const element = document.createElement('div');
@@ -1689,6 +1707,17 @@
 
             document.body.appendChild(element);
         }
+    </script>
+
+    <script type="text/javascript">
+        (function (d, m) {
+            var kommunicateSettings =
+                { "appId": "50ecaf279507b6b1845f86e11e24dcf", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
     </script>
 </body>
 
