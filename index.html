@@ -541,52 +541,46 @@
             transform: translateX(5px);
         }
 
-        .skills {
-            margin-top: 30px;
+         /* Updated Skills Section */
+        .skills-section {
+            margin-top: 40px;
         }
 
-        .skill-item {
+        .skills-section h3 {
+            font-size: 1.5rem;
             margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .skill-item:hover {
-            transform: translateX(5px);
-        }
-
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-
-        .skill-info span:first-child {
-            transition: all 0.3s ease;
-        }
-
-        .skill-item:hover .skill-info span:first-child {
             color: var(--primary-color);
         }
 
-        .skill-bar {
-            height: 8px;
-            background-color: #444;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            border-radius: 4px;
-            transition: width 1s ease, transform 0.3s ease;
-            transform-origin: left;
+        .skill-tag {
+            background-color: rgba(110, 87, 224, 0.2);
+            color: var(white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            transform-style: preserve-3d;
         }
 
-        .skill-item:hover .skill-progress {
-            transform: scaleY(1.2);
+        .skill-tag i {
+            margin-right: 5px;
         }
+
+        .skill-tag:hover {
+            background-color: rgba(110, 87, 224, 0.3);
+            transform: translateY(-3px) rotateY(10deg);
+            box-shadow: 0 5px 10px rgba(110, 87, 224, 0.2);
+        }
+
 
         /* Experience Section */
         #experience {
@@ -1236,61 +1230,33 @@
                         (3rd Semester).</p>
                     <a href="resume.pdf" class="btn" download>Download Resume</a>
 
-                    <div class="skills">
-                        <h3>My Skills</h3>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>C++</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
+                    <div class="skills-section">
+                        <h3>Languages</h3>
+                        <div class="skills-container">
+                            <span class="skill-tag"><i class="fas fa-code"></i> C++</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> Python</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> JavaScript</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> Dart</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> SQL</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> HTML/CSS</span>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Flutter App dev</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>MySQL</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>MERN Stack</span>
-                                <span>30%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 30%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>WordPress</span>
-                                <span>60%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 60%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Socket Programming</span>
-                                <span>50%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 50%"></div>
-                            </div>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="skills-section">
+                        <h3>Skills & Technologies</h3>
+                        <div class="skills-container">
+                            <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Flutter</span>
+                            <span class="skill-tag"><i class="fab fa-wordpress"></i> WordPress</span>
+                            <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
+                            <span class="skill-tag"><i class="fab fa-react"></i> React</span>
+                            <span class="skill-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                            <span class="skill-tag"><i class="fas fa-network-wired"></i> Socket Programming</span>
+                            <span class="skill-tag"><i class="fas fa-server"></i> MERN Stack</span>
+                            <span class="skill-tag"><i class="fas fa-code-branch"></i> Git</span>
+                            <span class="skill-tag"><i class="fas fa-cloud"></i> Firebase</span>
+                            <span class="skill-tag"><i class="fas fa-shield-alt"></i> Cybersecurity</span>
+                            <span class="skill-tag"><i class="fas fa-terminal"></i> Bash Scripting</span>
                         </div>
                     </div>
                 </div>
@@ -1722,3 +1688,4 @@
 </body>
 
 </html>
+
